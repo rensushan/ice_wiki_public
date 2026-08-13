@@ -3,9 +3,9 @@
 
 ## 高性能计算
 
-- [GPGPU](gpgpu)
+- [GPGPU](HPC/gpgpu)
 
-- [Benchmark](benchmark)
+- [Benchmark](HPC/benchmark)
 
 
 ## 人工智能
