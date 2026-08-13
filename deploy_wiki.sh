@@ -3,7 +3,7 @@ set -e
 
 # ========== 自行修改下面变量 ==========
 PROJECT_DIR="/home/ice/ice_wiki_public"
-VENV_PATH="/home/ice"
+VENV_PATH="/home/ice/venv"
 TARGET_WWW="/var/www/ice_wiki_public"
 # ======================================
 
