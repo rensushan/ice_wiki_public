@@ -1,0 +1,7 @@
+site_name: Ice Research Notes
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
