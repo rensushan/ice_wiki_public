@@ -47,19 +47,19 @@ plugins:
       docs_structure: folder     
       fallback_to_default: true 
       languages:
-        zh:
+        #zh:
         # -------------------------
         # Chinese
         # -------------------------
-        #- locale: zh
+        - locale: zh
           name: 中文
           default: true
           build: true
-        en: 
+        #en: 
         # -------------------------
         # English
         # -------------------------
-        #- locale: en
+        - locale: en
           name: English
           build: true
 
