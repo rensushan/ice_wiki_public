@@ -1,7 +1,110 @@
-site_name: Ice Research Notes
+site_name: Research Wiki
+site_description: Personal Research Knowledge Base
+site_author: ICE
 
 theme:
   name: material
 
-nav:
-  - Home: index.md
+  language: zh
+
+  features:
+
+    # -------------------------
+    # Navigation
+    # -------------------------
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+
+    # -------------------------
+    # Search
+    # -------------------------
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # -------------------------
+    # Content
+    # -------------------------
+    - content.code.copy
+    - content.code.annotate
+
+
+# ============================================================
+# Plugins
+# ============================================================
+
+plugins:
+
+  # 普通搜索
+  - search
+
+  # 中英文
+  - i18n:
+      docs_structure: folder
+
+      languages:
+
+        # -------------------------
+        # Chinese
+        # -------------------------
+        - locale: zh
+          name: 中文
+          default: true
+          build: true
+
+        # -------------------------
+        # English
+        # -------------------------
+        - locale: en
+          name: English
+          build: true
+
+
+# ============================================================
+# Markdown Extensions
+# ============================================================
+
+markdown_extensions:
+
+  # 基础
+  - admonition
+  - attr_list
+
+  # 折叠
+  - pymdownx.details
+
+  # SuperFences
+  - pymdownx.superfences
+
+  # Syntax highlighting
+  - pymdownx.highlight
+
+  # Tabs
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  # 数学公式
+  - pymdownx.arithmatex:
+      generic: true
+
+
+# ============================================================
+# MathJax
+# ============================================================
+
+extra_javascript:
+
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+
+# ============================================================
+# Other
+# ============================================================
+
+extra:
+  generator: false
+
+copyright: "© 2026 ICE"

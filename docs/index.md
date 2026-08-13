@@ -1,35 +1,33 @@
-# Welcome to MkDocs
-
-# Ice Research Notes
-
-
-欢迎来到冷冰冰的研究笔记。
-
+# 研究笔记
 2026.8.12 
 
-## AI
+## 高性能计算
 
-- [Quantization](quantization.md)
+- [GPGPU](gpgpu)
 
-- [Xray记录](xray)
+- [Benchmark](benchmark)
 
 
-## Hardware
+## 人工智能
 
-- [FPGA](fpga.md)
+
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
 
 
-## Commands
+## 体系结构
 
 * `mkdocs new [dir-name]` - Create a new project.
 * `mkdocs serve` - Start the live-reloading docs server.
 * `mkdocs build` - Build the documentation site.
 * `mkdocs -h` - Print help message and exit.
 
-## Project layout
+## 算法
+
+
+
+## 工具箱
 
     mkdocs.yml    # The configuration file.
     docs/
