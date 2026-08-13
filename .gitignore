@@ -1,0 +1,9 @@
+# mkdocs
+site/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+EOF
+
