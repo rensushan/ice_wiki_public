@@ -1,0 +1,102 @@
+在使用 **ModelSim** 进行仿真时，如果你的设计中有 `include` 语句引用其他文件（例如 Verilog 的 `\`include`指令），需要告诉 ModelSim`include` 文件的根路径，以便仿真器能够找到这些文件。
+
+### 方法 1：在命令行中指定 `+incdir`
+
+`+incdir` 是一个编译选项，用于指定 `include` 文件的搜索路径。可以在命令行中添加：
+
+```bash
+vlog +incdir+<path_to_include_dir> <source_file>
+```
+
+#### 示例
+
+假设你的项目结构如下：
+
+```
+project/
+│
+├── rtl/
+│   ├── top.v
+│   └── submodule.v
+│
+└── include/
+    └── definitions.v
+```
+
+如果 `top.v` 中有如下代码：
+
+```verilog
+`include "definitions.v"
+```
+
+你可以通过以下命令指定 `include` 路径：
+
+```bash
+vlog +incdir+include rtl/top.v
+```
+
+#### 说明
+
+* `+incdir+<path>` 用于添加 `include` 搜索路径，可以指定多个路径，用 `+` 分隔：
+
+  ```bash
+  vlog +incdir+dir1+dir2 rtl/top.v
+  ```
+
+### 方法 2：通过 `.do` 文件指定
+
+可以将编译选项写入 ModelSim 的脚本文件（`.do` 文件）中，方便管理和复用。
+
+#### 示例
+
+创建一个脚本文件 `compile.do`：
+
+```tcl
+vlog +incdir+include rtl/top.v
+```
+
+然后在 ModelSim 中运行：
+
+```bash
+do compile.do
+```
+
+### 方法 3：通过 GUI 指定
+
+在 ModelSim 的图形界面中，也可以手动指定 `include` 路径：
+
+1. 打开 **ModelSim**。
+2. 点击 **Compile > Compile Options**。
+3. 在 **Verilog Compiler Options** 中，找到 **Include directories**。
+4. 添加你的 `include` 路径，例如 `include`。
+
+### 方法 4：通过 `vlog.ini` 配置文件
+
+ModelSim 支持通过 `vlog.ini` 文件全局或项目级管理编译选项：
+
+1. 打开或创建你的 `vlog.ini` 文件。
+
+2. 在 `[vlog]` 段落中，添加 `+incdir`：
+
+   ```ini
+   [vlog]
+   +incdir+include
+   ```
+
+3. 确保运行仿真时使用这个 `vlog.ini` 文件。
+
+### 注意事项
+
+1. **相对路径 vs 绝对路径**：
+
+   * 使用相对路径（如 `+incdir+include`）可以更方便管理。
+   * 如果路径复杂，建议使用绝对路径。
+
+2. **路径优先级**：
+
+   * 如果有多个 `+incdir`，ModelSim 会按顺序搜索这些路径，直到找到匹配的文件。
+
+通过以上方法，你可以灵活指定 `include` 的根路径，确保 ModelSim 能正确解析文件依赖关系。
+
+
+
