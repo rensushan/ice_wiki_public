@@ -6,6 +6,9 @@
 
 - [Benchmark](HPC/benchmark)
 
+# EDA
+
+- [eFPGA](EDA/eFPGA.md)
 
 # 人工智能
 
