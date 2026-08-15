@@ -4,7 +4,7 @@
 
 - [GPGPU](HPC/gpgpu)
 
-- [Benchmark](HPC/benchmark)
+- [Benchmark](HPC/benchmark.md)
 
 # EDA
 
