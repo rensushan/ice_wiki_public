@@ -1,6 +1,8 @@
 # 高性能计算Benchmark
 
-## SPEC2026 
+## SPEC2026
+
+- [Introduction（Q12–Q16：套件 / 基准表 / 指标，中文）](spec2026/introduction.md)
 
 ## SPEC2017 
 
